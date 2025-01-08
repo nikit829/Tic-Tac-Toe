@@ -4,7 +4,7 @@ let msgContainer=document.querySelector(".msg-container")
 let winningMsg=document.querySelector(".msg-winner")
 let drawCount=0
 
-let turn=true;
+let turn=true;//true for X,false for O
 const winningChance=[[0,1,2],
                     [3,4,5],
                     [6,7,8],
@@ -47,10 +47,12 @@ const checkWinner = ()=>{
                 return;
             }
         }
-        if(drawCount===9){
-            showDraw();
-            disableBoxes();
-        }
+    }
+    if(drawCount===9){
+        console.log("drawCount  is 9")
+        showDraw();
+        disableBoxes();
+        alert(`Match's Draw!`)
     }
     /* if(isBoardFull()){
         showDraw();
@@ -66,6 +68,7 @@ const checkWinner = ()=>{
 } */
 
 const showDraw=()=>{
+    console.log("showdraw  calld")
     winningMsg.innerText=`Match's Draw!`
     msgContainer.classList.remove("hide")
 }
@@ -91,6 +94,7 @@ const newGame=()=>{
     for(let box of boxes){
         msgContainer.classList.add("hide")
         enableBoxes();
+        drawCount=0;
     }
 }
 newGamebtn.addEventListener("click",()=>{
