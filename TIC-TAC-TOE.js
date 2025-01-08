@@ -49,7 +49,6 @@ const checkWinner = ()=>{
         }
     }
     if(drawCount===9){
-        console.log("drawCount  is 9")
         showDraw();
         disableBoxes();
         alert(`Match's Draw!`)
@@ -68,7 +67,6 @@ const checkWinner = ()=>{
 } */
 
 const showDraw=()=>{
-    console.log("showdraw  calld")
     winningMsg.innerText=`Match's Draw!`
     msgContainer.classList.remove("hide")
 }
